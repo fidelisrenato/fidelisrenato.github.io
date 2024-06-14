@@ -1,7 +1,7 @@
 # Portfolio
 
-Olá, este é meu portfolio de Data Engineer.
-Acesse a página: https://fidelisrenato.github.io/
+Olá, seja bem-vindo ao meu portfólio.
+Acesse a página:  https://fidelisrenato.github.io/
 
 
 
