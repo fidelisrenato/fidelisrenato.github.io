@@ -1,5 +1,3 @@
-# Portfólio
-
 # Olá! Eu sou Renato Fidelis. 👋
 
 ## Sobre mim
