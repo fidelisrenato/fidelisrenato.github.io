@@ -237,7 +237,7 @@ html{
     transition-delay: 0.125s;
 }
 
-/* sessão home estilo */
+/* sessão inicio estilo - Olá, meu nome é: Renato Fidelis eu sou um */
 .home{
     display: flex;
     background: #111;
@@ -253,7 +253,7 @@ html{
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 100%;17:05 30/06/2024
     height: 100%;
     overflow: hidden;
 }
@@ -280,7 +280,7 @@ html{
     margin: 5px 0;
     animation: MoveItem 0.9s forwards;
 }
-/* Data Analist/Data Enginnering Student - fffb00 */
+/* Data Analist/Data Enginnering Student - Cor original = fffb00 */
 .home .home-content .text-3 span{
     color: #118DFF;
     font-weight: 500;
@@ -676,6 +676,8 @@ section .title::after{
 .owl-dot.active:hover{
     background: #118DFF!important;
 }
+
+
 /* sessão contato estilo */
 .contact{
     -webkit-box-shadow: 1px 6px 35px rgba(0,0,0,0.55);
@@ -789,8 +791,8 @@ section .title::after{
     width: 550px;
 }
 .thanks .title::after{
-    width: 330px;
-    content: "responderei o mais breve possível";
+    width: 550px;
+    content: "retornarei o contato o mais breve possível";
 }
 .thanks .thanks-content{
     width: 550px;
@@ -819,7 +821,7 @@ section .title::after{
     width: 230px;
 }
 .objective .title::after{
-    content: "objetivos";
+    content: "descrição dos objetivos";
     background: #e9e9e9;
 }
 .analysis .title::before{
@@ -832,7 +834,7 @@ section .title::after{
     width: 330px;
 }
 .modeling .title::after{
-    content: "preparando os dados";
+    content: "modelagem conceitual";
     background: #e9e9e9;
 }
 .report .report-content,
