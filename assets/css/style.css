@@ -810,7 +810,7 @@ section .title::after{
     width: 235px;
 }
 .report .title::after{
-    content: "visualização de dados";
+    content: "cenário";
 }
 .objective, .modeling{
     background: #e9e9e9;
@@ -819,7 +819,7 @@ section .title::after{
     width: 230px;
 }
 .objective .title::after{
-    content: "objetivos e fórmulas";
+    content: "objetivos";
     background: #e9e9e9;
 }
 .analysis .title::before{
