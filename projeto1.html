@@ -14,7 +14,7 @@
         <a href="index.html"><i class="fa fa-arrow-left"></i></a>
     </div>
     
-    <!-- relatório -->
+    <!-- definição/relatório -->
     <section class="report" id="report">
         <div class="max-width">
             <h2 class="title">Definição</h2>
@@ -25,15 +25,16 @@
                         <iframe title="modelagem_exercicio_03" width="800" height="450" src="media/works/exercicio_03.png" frameborder="0" allowFullScreen="true"></iframe>
                     </div>
                     <br>
+                    <p>Exercício proposto durante a mentoria, após as aulas de modelagem.</p>
                     <!-- <a href="https://app.powerbi.com/view?r=eyJrIjoiNzAzMmE1ZmEtNzk0Ni00YjBhLWIzYTUtMDEzODA2NDQ1MGRhIiwidCI6ImUzYTc5NjE2LWVhZTktNDFkNC1iNDIzLWI1NmY0MTk1YjJjMiJ9"><p>Link do Relatório</p></a>-->
                     <br>
-                    <p class="desc">A modelagem dos dados foi realizada utilizando a ferramenta BrModelo, solução open source baseada em java, na versão on premisse.</p>
+                    <p class="desc"></p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- objetivo -->
+    <!-- objetivo/requisitos -->
     <section class="objective" id="objective">
         <div class="max-width">
             <h2 class="title">Requisitos</h2>
@@ -41,34 +42,27 @@
 
                 <div class="column left">                    
                     <ul>
-                        <p><b>Tópico 1</b></p>
-                        <li>Os livros são escritos por pelo menos um autor. Um autor pode escrever vários livros.</li>                        
-                        <br> 
-                        <p><b>Tópico 2</b></p>
-                        <li>Do livro deverá ser armazenado o título, o código ISBN, o número e o ano da edição.</li>
+                        <p><b>Tópicos</b></p>
+                        <br>                       
+                        <li>Os livros são escritos por pelo menos um autor.</li>                        
+                        <br>                         
+                        <li>Um autor pode escrever vários livros.</li>
+                        <br>                        
+                        <li>Um livro é publicado por apenas uma editora.</li>
                         <br>
-                        <p><b>Tópico 3</b></p>
-                        <li>Dos autores deve-se armazenar: um código, nome, data de nascimento, país de origem, titulação</li>
-                        <br>
-                        <p><b>Tópico 4</b></p>
-                        <li>Um livro é publicado por apenas uma editora, da qual deve ser armazenado: nome, cidade, UF, e-mail e todos os telefones de contato.
-                        
+
                     </ul>
                 </div>
 
                 <div class="column right">                    
                     <ul>
-                        <p><b></b></p>
-                        <li>.</li>                        
-                        <br> 
-                        <p><b></b></p>
-                        <li></li>
+                        <p><b>Campos</b></p>
+                        <br>                        
+                        <li>Dos livros: título, código ISBN, número e ano da edição.</li>
                         <br>
-                        <p><b></b></p>
-                        <li></li>
-                        <br>
-                        <p><b></b></p>
-                        <li></li>                        
+                        <li>Dos autores: código, nome, data nascimento, país de origem, titulação</li>
+                        <br>                        
+                        <li>Das editoras: nome, cidade, UF, e-mail e todos os telefones de contato.</li>                        
                     </ul>
                 </div>
             </div>
@@ -82,11 +76,15 @@
             <div class="modeling-content">
 
                 <div class="column left">
-                    <div class="text">Relacionamento entre as tabelas e cardinalidade</div>
-                    <p>O processo de <span>modelagem</span> deste projeto foi feito inteiramente no <span>BrModelo</span>. Após analisar os requisitos propostos, foi realizada a inserção do campos, bem como, a <span>cardinalidade</span> para cada <span>relacionamento</span>.
-                       Entre as tabelas <span>Livro e Autor</span>, a <span>cardinalidade</span>, é de 1 para muitos (1:n), significando dizer que um livro pode ser escrito por um ou vários autores. No entanto, entre as tabelas <span>Autor e Livro</span>, a <span>cardinalidade</span>, é de 0 para muitos (0:n), indicando que um autor pode escrever nenhum ou vários livros.                       
-                    <br>
-                    <p>As tabelas <span>Livro e Editora</span>, possuem <span>cardinalidade</span>, de 1 para 1 (1:1), significando dizer que um livro poderá ser editado por uma única editora. Já entre as tabelas <span>Editora e Livro</span>, a <span>cardinalidade</span>, é de 0 para muitos (0:n), indicando que uma editora poderá editar nenhum ou vários livros.                       
+                    <div class="text"></div>
+                    <p>O processo de <span>modelagem</span> deste projeto foi realizado utilizando a ferramenta <span>BrModelo</span>, solução open source baseada em java, na versão on premisse. Após analisar os requisitos propostos, foi realizado o mapeamento das tabelas, bem como, definida a <span>cardinalidade</span> para cada <span>relacionamento</span>.
+                    <br><br>
+                    <p>Entre as tabelas <span>Livro e Autor</span>, foram geradas as seguintes <span>cardinalidades:</span> 1 para muitos (1:n), significando dizer que um livro pode ser escrito por um ou vários autores e 0 para muitos (0:n), indicando que um autor pode escrever nenhum ou vários livros.                       
+                    <br><br>
+                    <p>Entre as tabelas <span>Livro e Editora</span>, foram geradas as seguintes <span>cardinalidades:</span> 1 para 1 (1:1), significando dizer que um livro poderá ser editado por uma única editora e 0 para muitos (0:n), indicando que uma editora poderá editar nenhum ou vários livros.                       
+                    <br><br>
+                    <p>Entre as tabelas <span>Editora e Telefone</span>, foram geradas as seguintes <span>cardinalidades:</span> 0 para n (0:n), significando dizer que uma editora poderá ter nenhum ou vários telefones e 1 para 1 (1:1), indicando que um telefone pertence a apenas uma editora. 
+
                 </div>
 
                 <div class="column right">
