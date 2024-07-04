@@ -78,12 +78,14 @@
                 <div class="column left">
                     <div class="text"></div>
                     <p>O processo de <span>modelagem</span> deste projeto foi realizado utilizando a ferramenta <span>BrModelo</span>, solução open source baseada em java, na versão on premisse. Após analisar os requisitos propostos, foi realizado o mapeamento das tabelas, bem como, definida a <span>cardinalidade</span> para cada <span>relacionamento</span>.
-                    <br><br>
+                    <br><br>                    
                     <p>Entre as tabelas <span>Livro e Autor</span>, foram geradas as seguintes <span>cardinalidades:</span> 1 para muitos (1:n), significando dizer que um livro pode ser escrito por um ou vários autores e 0 para muitos (0:n), indicando que um autor pode escrever nenhum ou vários livros.                       
                     <br><br>
                     <p>Entre as tabelas <span>Livro e Editora</span>, foram geradas as seguintes <span>cardinalidades:</span> 1 para 1 (1:1), significando dizer que um livro poderá ser editado por uma única editora e 0 para muitos (0:n), indicando que uma editora poderá editar nenhum ou vários livros.                       
                     <br><br>
                     <p>Entre as tabelas <span>Editora e Telefone</span>, foram geradas as seguintes <span>cardinalidades:</span> 0 para n (0:n), significando dizer que uma editora poderá ter nenhum ou vários telefones e 1 para 1 (1:1), indicando que um telefone pertence a apenas uma editora. 
+                    <br><br>
+                    <p>O atributo telefone, presente na imagem da seção de definição, por ser multivalorado, recebeu a aplicação da 1FN que em um processo de normalização dos dados determina que atributos compostos e multivalorados sejam eliminados.
 
                 </div>
 
