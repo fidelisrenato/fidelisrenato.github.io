@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <title>Projeto 4</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/keyframes.css">
+</head>
+<body>
+    <div class="back">
+        <a href="index.html"><i class="fa fa-arrow-left"></i></a>
+    </div>
+    
+    <!-- definição/relatório -->
+    <section class="report" id="report">
+        <div class="max-width">
+            <h2 class="title">Definição</h2>
+            <div class="report-content">  
+                <div class="column center">
+                    
+                    <div class="column left">
+                        <iframe title="exercicio_06" width="800" height="450" src="media/works/exercicio_06.png" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                    <div class="column right">
+                        <iframe title="exercicio_06" width="800" height="450" src="media/works/exercicio_06_1.png" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>            
+                    <br>
+                    <p>Exercício proposto durante a mentoria, após as aulas de modelagem.</p>
+                </div>
+                    <!-- <a href="https://app.powerbi.com/view?r=eyJrIjoiNzAzMmE1ZmEtNzk0Ni00YjBhLWIzYTUtMDEzODA2NDQ1MGRhIiwidCI6ImUzYTc5NjE2LWVhZTktNDFkNC1iNDIzLWI1NmY0MTk1YjJjMiJ9"><p>Link do Relatório</p></a>-->
+                    <br>
+                    <p class="desc"></p>
+                </div>
+            </div>                   
+        
+    </section>
+    
+    <!-- objetivo/requisitos -->
+    <section class="objective" id="objective">
+        <div class="max-width">
+            <h2 class="title">Requisitos</h2>
+            <div class="objective-content">
+
+                <div class="column left">
+                    <ul>
+                        <p><b>Tópicos</b></p>
+                        <br>                       
+                        <li>Um cliente pode fazer vários pedidos, porém um pedido pode pertencer somente a um cliente.</li>
+                        <br>                         
+                        <li>Um produto pode estar em vários pedidos, e este pedido pode conter vários produtos.</li>
+                        <br>                        
+                        <li>Um vendedor pode liberar vários pedidos, no entanto, um determinado pedido somente pode ser liberado por um vendedor.</li>
+                        <br>
+                        <li>Um pedido pode ter várias formas de pagamento e uma forma de pagamento pode ser utilizada em vários pedidos.</li>
+                        <br>
+                        <li>Um produto pode ter apenas uma categoria, mas uma categoria pode estar em diversos produtos.</li>
+                        <br>
+                    </ul>
+                </div>
+
+                <div class="column right">                    
+                    <ul>
+                        <p><b>Campos</b></p>
+                        <br>                        
+                        <li>Clientes: RG, CPF, nome, telefone, e-mail e endereço.</li>
+                        <br>
+                        <li>Produtos: nome do produto, código da categoria, descrição da categoria, preço, quantidade em estoque, quantidade de itens.</li>
+                        <br>
+                        <li>Vendedores: matricula, nome, rg, cpf, endereço, salário, e-mail, telefone, data de admissão, data de demissão e cargo.</li>
+                        <br>
+                        <li>Formas de pagamento: código, sigla, descrição.</li>
+                        <br>
+                                                
+                    </ul>
+                </div>
+            </div>
+    </section>
+
+    
+    <!-- ETL e Modelagem -->
+    <section class="modeling" id="modeling">
+        <div class="max-width">
+            <h2 class="title">Modelagem</h2>
+            <div class="modeling-content">
+
+                <div class="column left">
+                    <div class="text"></div>
+                    <p>O processo de <span>modelagem</span> deste projeto foi realizado utilizando a ferramenta <span>BrModelo</span> solução open source baseada em java, na versão on premisse. Após analisar os requisitos propostos, foi realizado o mapeamento das tabelas, bem como, definida a <span>cardinalidade</span> para cada <span>relacionamento</span>.
+                    <br><br>
+                    <p>Dentro da modelagem de dados existe um processo chamado de normalização, o qual corresponde a aplicação das formas normais às entidades do nosso modelo. Formas normais são regras e diretrizes utilizadas na modelagem de banco de dados relacional para organizar dados de forma eficiente, minimizando a redundância e evitando problemas de inconsistência.
+                    <br><br>
+                    <p>Para este exemplo, foi necessário a aplicação, apenas, das 2 primeiras formas normais. <span>A 1FN</span> diz que devemos eliminar os <span>atributos compostos</span> e os <span>atributos multivalorados</span> e ainda os <span>atributos aninhados</span>.
+                    <br><br>
+                    <p>Os <span>atributos compostos</span> devem ser decompostos em atributos simples dentro da mesma entidade, já os multivalores e os aninhados devem ser transformados em tabela/entidade e referenciá-los com a entidade principal por meio da criação de uma <span>chave estrangeira</span>.
+                    <br><br>
+                    <p>Já a <span>2FN</span> preconiza que uma tabela deve atender todos os requisitos da primeira forma normal, e ainda, que os registros na tabela, que não são chaves, dependam da chave primária em sua totalidade e não apenas parte dela.
+                    <br><br>
+                    
+                </div>
+
+                <div class="column right">
+                    <!-- <img src="media/works/modelagem_exercicio_05.png" alt="exercicio_05">-->
+                    <iframe title="exercicio_06" width="1080" height="455" src="media/works/modelagem_exercicio_06.png" frameborder="0" allowFullScreen="true"></iframe>
+                    <iframe title="exercicio_06" width="1080" height="455" src="media/works/modelagem_exercicio_06_1.png" frameborder="0" allowFullScreen="true"></iframe>
+                    <iframe title="exercicio_06" width="1080" height="455" src="media/works/exercicio_06_conceitual_1.png" frameborder="0" allowFullScreen="true"></iframe>
+                    <iframe title="exercicio_06" width="1080" height="455" src="media/works/exercicio_06_logico.png" frameborder="0" allowFullScreen="true"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--rodapé início-->
+    <footer>
+        <span>Criado por <a href="https://github.com/fidelisrenato" target="_blank">Renato Fidelis</a> | <span class="far fa-copyright"></span> 2024 Todos os direitos reservados.</span>
+    </footer>
+
+</body>
+</html>
