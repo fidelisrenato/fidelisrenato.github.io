@@ -2,7 +2,7 @@
 
 ## Sobre mim
 
-Sou um profissional dedicado e apaixonado por dados, com experiência significativa em análise de dados e atualmente em transição para a área de Engenharia de Dados. Ao longo da minha carreira, desenvolvi habilidades sólidas em:
+Sou um profissional dedicado e apaixonado por dados, com experiência em análise de dados e atualmente em transição para a área de Engenharia de Dados. Ao longo da minha carreira, desenvolvi habilidades sólidas em:
 
 - Análise de dados
 - Visualização de dados
