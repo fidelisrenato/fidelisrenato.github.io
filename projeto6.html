@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <title>Projeto 5</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/keyframes.css">
+</head>
+<body>
+    <div class="back">
+        <a href="index.html"><i class="fa fa-arrow-left"></i></a>
+    </div>
+    
+    <!-- relatório -->
+    <section class="report" id="report">
+        <div class="max-width">
+            <h2 class="title">Instalações</h2>
+            <div class="report-content">
+                <div class="column center">
+                    
+                    <div class="box">
+                        <iframe title="Dash Instalações" width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiNzAwYjVjZTYtZmIyNy00NzI3LTg3MjctNTMyYmExOWJjMmFhIiwidCI6Ijc4NjQ1NjZhLTllMDYtNGJiOS05Yzg4LTQ1YTdkMTY3NmNjYyJ9" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                    <br>
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiNzAwYjVjZTYtZmIyNy00NzI3LTg3MjctNTMyYmExOWJjMmFhIiwidCI6Ijc4NjQ1NjZhLTllMDYtNGJiOS05Yzg4LTQ1YTdkMTY3NmNjYyJ9"><p>Link do Relatório</p></a>
+                    <br>
+                    <p class="desc">Este relatório foi desenvolvido inteiramente com recursos nativos do Power BI, visando acompanhar o processo de Instalação dos links de internet. Foi utilizada uma base de dados real, porém alterada para proteger os dados da fonte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- objetivo -->
+    <section class="objective" id="objective">
+        <div class="max-width">
+            <h2 class="title">Requisitos</h2>
+            <div class="objective-content">
+
+                <div class="column left">
+                    <div class="text">Requisitos</div>
+                    <ul>
+                        <p>Página única</p>
+                        <li>Deve existir 1 segmentador ("Tipo de Unidade") para as métricas “Total Unidades", "Pausadas", "Não instalar", "Não iniciadas", ""Realizar Migração", "Migradas" que permitirá ao gerente de infraestrutura visualizar os dados por tipo de Unidade;</li>
+                        <li>6 cards que exibam: Total geral de unidades, Total de unidades pausadas, Total de unidades não instaladas, Total de unidades iniciadas, Total de unidades para realizar migração e Total de unidades migradas;</li>
+                        <li>Um visual com Total de unidades por nível de atenção;</li>
+                        <li>Um visual com a situação do cabeamento interno;</li>
+                        <li>Um visual com o total de unidades que tiveram o equipamento da empresa instalado;</li>
+                        <li>Um visual com o STATUS indicado pela empresa;</li>
+                        <li>Um visual com o % de unidades que já receberam o link de internet da empresa;</li>
+                    </ul>
+                </div>
+
+                <div class="column right">
+                    <div class="text">Definições da área</div>
+                    <ul>
+                        <li>Links de Internet:</li>
+                        <p> &sum; <span>(Total de intalações)</span></p>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Análises -->
+    <section class="analysis" id="analisys">
+        <div class="max-width">
+            <h2 class="title">Análise de Dados</h2>
+            <div class="analysis-content">
+
+                <div class="column center">
+                    <div class="text">Extraindo informações</div>
+                    <p>A <span>análise exploratória</span> foi realizada com a utilização de visuais de tabela e barras, bem como expressões DAX, para entendimento dos dados.</span>.</p>
+                </div>
+
+                <div class="column left">
+                    <p>Medida do <span>Total de Unidades</span>:</p>
+                    <pre>Total Unidades = 
+                        VAR EMBRANCO =                 
+                            DISTINCTCOUNT(
+                                fInstalacoes[CodUnidade])
+                        return
+                            IF(
+                                ISBLANK(
+                                    EmBranco),
+                                        0,
+                                    EmBranco
+                                        
+                              )
+                    </pre>
+                    <p>Medida do <span>Total de Unidades pausadas</span>:</p>
+                    <pre>Pausadas = 
+                        VAR EMBRANCO =             
+                            CALCULATE(
+                                COUNT(
+                                    fInstalacoes[STATUS_GERAL_UMTELECOM]),
+                                    fInstalacoes[STATUS_GERAL_UMTELECOM] = "PAUSADO")
+                        return
+                        IF(
+                            ISBLANK(
+                                EmBranco),
+                                    0,
+                                EmBranco
+                        )
+                    </pre>
+                    <p>Medida do <span>Total de Unidades Não Instaladas</span>:</p>
+                    <pre>Não Instalar = 
+                        VAR EMBRANCO =             
+                            CALCULATE(
+                                COUNT(fInstalacoes[STATUS_GERAL_UMTELECOM]),
+                                fInstalacoes[STATUS_GERAL_UMTELECOM] = "NÃO INSTALAR")
+                        return
+                        IF(
+                            ISBLANK(
+                                EmBranco),
+                                    0,
+                                EmBranco
+                        )
+                    </pre>
+                </div>
+                <div class="column right">
+                    <p>Medida do <span>Total de Unidades Não Iniciadas</span>:</p>
+                    <pre>Não Iniciadas = 
+                        VAR EMBRANCO =             
+                            CALCULATE(
+                                COUNT(fInstalacoes[STATUS_GERAL_UMTELECOM]),
+                                fInstalacoes[STATUS_GERAL_UMTELECOM] = "NÃO INICIADO")
+                        return
+                        IF(
+                            ISBLANK(
+                                EmBranco),
+                                    0,
+                                EmBranco
+                        )
+                    </pre>
+                    <p>Medida do <span>Total de Unidades Não Migradas</span>:</p>
+                    <pre>Realizar Migração =                         
+                        VAR EMBRANCO =         
+                        CALCULATE(
+                            COUNT(
+                                fInstalacoes[STATUS_GERAL_UMTELECOM]
+                            ),
+                                fInstalacoes[STATUS_GERAL_UMTELECOM] = "REALIZADO",
+                                fInstalacoes[TESTE_DE_PING/MIGRAÇÃO] = "NÃO"
+                        )
+                        return                        
+                        IF(
+                            ISBLANK(
+                                EmBranco),
+                                    0,
+                                EmBranco
+                        )
+                    </pre>                    
+                    <p>Medida do <span>Total de Unidades Migradas</span>:</p>
+                    <pre>Migradas = 
+                        VAR EMBRANCO =             
+                            CALCULATE(
+                                COUNT(fInstalacoes[TESTE_DE_PING/MIGRAÇÃO]),
+                                fInstalacoes[TESTE_DE_PING/MIGRAÇÃO] = "SIM")
+                        return
+                        IF(
+                            ISBLANK(
+                                EmBranco),
+                                    0,
+                                    EmBranco
+                        )                        
+                    </pre>                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ETL e Modelagem -->
+    <section class="modeling" id="modeling">
+        <div class="max-width">
+            <h2 class="title">ETL e Modelagem</h2>
+            <div class="modeling-content">
+
+                <div class="column left">
+                    <div class="text">Relacionamento entre as tabelas</div>
+                    <p>O processo de <span>ETL</span> deste projeto foi feito inteiramente em <span>Power Query</span> por se tratar de uma base cujo volume dados e bem resumido.
+                       Também foi criada, em linguagem M, uma tabela <span>dimensão calendário</span>, que possibilita centralizar as datas, permitindo melhor consistência nas análises ao trabalhar com funções de inteligência de tempo.</p>                    
+                </div>
+
+                <div class="column right4">
+                    <img src="media/works/modelagem_dash_instalacoes.jpg" alt="Dashboard de Instalações">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--rodapé início-->
+    <footer>
+        <span>Criado por <a href="https://github.com/fidelisrenato" target="_blank">Renato Fidelis</a> | <span class="far fa-copyright"></span> 2024 Todos os direitos reservados.</span>
+    </footer>
+
+</body>
+</html>
