@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <title>Projeto 4</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/keyframes.css">
+</head>
+<body>
+    <div class="back">
+        <a href="index.html"><i class="fa fa-arrow-left"></i></a>
+    </div>
+    
+    <!-- relatório -->
+    <section class="report" id="report">
+        <div class="max-width">
+            <h2 class="title">Modelagem</h2>
+            <div class="report-content">
+                <div class="column center">
+                    
+                    <div class="box">
+                        <iframe title="Dash Ocorrências Conectividade" width="800" height="510" src="https://app.powerbi.com/view?r=eyJrIjoiN2M2Zjk0YTEtMGEwZC00Y2I4LWE3OWUtOTUwNjNjNjYzZTU1IiwidCI6Ijc4NjQ1NjZhLTllMDYtNGJiOS05Yzg4LTQ1YTdkMTY3NmNjYyJ9" frameborder="0" allowFullScreen="true"></iframe>
+                    </div>
+                    <br>
+                    <a href="https://app.powerbi.com/view?r=eyJrIjoiN2M2Zjk0YTEtMGEwZC00Y2I4LWE3OWUtOTUwNjNjNjYzZTU1IiwidCI6Ijc4NjQ1NjZhLTllMDYtNGJiOS05Yzg4LTQ1YTdkMTY3NmNjYyJ9"><p>Link do Relatório</p></a>
+                    <br>
+                    <p class="desc">Este relatório foi desenvolvido, inteiramente com recursos nativos do Power BI, para atender uma demanda pontual, utilizando uma base de dados real, porém alterada para proteger os dados da fonte.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- objetivo -->
+    <section class="objective" id="objective">
+        <div class="max-width">
+            <h2 class="title">Requisitos</h2>
+            <div class="objective-content">
+
+                <div class="column left">
+                    <div class="text">O que foi pedido</div>
+                    <ul>
+                        <p>Página única</p>
+                        <li>Deve existir 3 segmentadores, Ano, Mês e Tipo Unidade para as métricas “Ocorrências Ano Anterior" e "Ocorrências Ano Atual", que permitirá ao gestor escolher por qual(is) segmentadores ele desejar analisar o relatório;</li>
+                        <li>2 cards que exibam o total de Ocorrências do ano anterior e do ano atual;</li>
+                        <li>Um visual com Total de Ocorrências por distrito;</li>
+                        <li>Um visual com Total de Ocorrências por tipo;</li>
+                        <li>Um visual com o percentual de Ocorrências por tipo do ano anterior;</li>
+                        <li>Um visual com o percentual de Ocorrências por tipo do ano atual;</li>
+                    </ul>
+                </div>
+
+                <div class="column right">
+                    <div class="text">Definições da área</div>
+                    <ul>
+                        <li>Ocorrências de Conectividade:</li>
+                        <p> &sum; (Total de Ocorrências)</p>                        
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Análises -->
+    <section class="analysis" id="analisys">
+        <div class="max-width">
+            <h2 class="title">Análise de Dados</h2>
+            <div class="analysis-content">
+
+                <div class="column center">
+                    <div class="text">Extraindo informações</div>
+                    <p>Por se tratar de uma base já conhecida a <span>análise exploratória</span>, foi realizada de maneira rápida, porém com atenção aos requisitos estabelecidos, utilizando tabelas e expressões DAX, para conhecer os dados.</span>.</p>
+                </div>
+
+                <div class="column left">
+                    <p>Medida do <span>Total de Ocorrências do ano anterior</span>:</p>
+                    <pre>Ocorrencias Ano Anterior = 
+                    VAR EMBRANCO =             
+                        CALCULATE(
+                            [Ocorrências Ano Atual],
+                            DATEADD(dCalendario[Data], -1, YEAR)
+                     )
+                    return
+                    IF(
+                        ISBLANK(
+                            EmBranco),
+                            0,
+                            EmBranco
+                    )</pre>
+                </div>
+                <div class="column right">
+                    <p>Medida do <span>Total de Ocorrências do ano antual</span>:</p>
+                    <pre>
+                    Ocorrencias Ano Atual =
+                        VAR EMBRANCO = 
+                            CALCULATE(
+                                COUNT(Ocorrencias_Conectividade[CodUnidade])
+                            )
+                    return
+                    IF(
+                        ISBLANK(
+                            EmBranco),
+                                0,
+                            EmBranco
+                      )
+                    </pre>                    
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ETL e Modelagem -->
+    <section class="modeling" id="modeling">
+        <div class="max-width">
+            <h2 class="title">ETL e Modelagem</h2>
+            <div class="modeling-content">
+
+                <div class="column left">
+                    <div class="text">Relacionamento entre as tabelas</div>
+                    <p>O processo de <span>ETL</span> deste projeto foi feito inteiramente em <span>Power Query</span> por se tratar de uma base cujo volume dados é bem resumido.
+                       Também foi criada, em linguagem M, uma tabela <span>dimensão calendário</span>, que possibilita centralizar as datas, permitindo melhor consistência nas análises ao trabalhar com funções de inteligência de tempo.</p>                    
+                </div>
+
+                <div class="column right4">
+                    <img src="media/works/modelagem_dash_ocorrencias.jpg" alt="Dashboard de Ocorrências">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--rodapé início-->
+    <footer>
+        <span>Criado por <a href="https://github.com/fidelisrenato" target="_blank">Renato Fidelis</a> | <span class="far fa-copyright"></span> 2024 Todos os direitos reservados.</span>
+    </footer>
+
+</body>
+</html>
